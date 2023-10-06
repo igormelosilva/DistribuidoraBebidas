@@ -10,14 +10,15 @@ namespace ApiDistribuidora.Global
         public static string tokenSecret = string.Empty;
         public static DateTime lifeToken;
 
+        //variaveis lidas do appsettings.json
+        public static string fileName = string.Empty;
+        public static string folderName = string.Empty;
+
+
         //caminhos
         public static string basePath = string.Empty;
         public static string filePath = string.Empty;
         public static string folderPath = string.Empty;
-
-        //variaveis lidas do appsettings.json
-        public static string fileName = string.Empty;
-        public static string folderName = string.Empty;
 
         //Credenciais de acesso ao banco
         public static string dbHost = string.Empty;
