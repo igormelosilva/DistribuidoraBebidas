@@ -51,7 +51,8 @@ namespace DistribuidoraBebidas.Forms
         private void btnEnviarAccess_Click(object sender, EventArgs e)
         {
             ApiDrink apiDrink = new ApiDrink();
-            Result result = apiDrink.AccessTest(Config.token);
+            Security security = new Security();
+            Result result = apiDrink.AccessTest(security.EncryptTripleDES(Config.token));
             if (result.success == true)
             {
                 lblAcessTest.Text = "True";

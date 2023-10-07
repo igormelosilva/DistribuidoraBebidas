@@ -21,13 +21,14 @@ namespace ApiDistribuidora.Controllers
 
         [HttpGet]
         [Route("AccessTest")]
-        public JsonResult AccessTest(string token)
+        public Result AccessTest(string token)
         {
             Result result = new Result();
 
             try
             {
-                if (token == Config.token) 
+                Security security = new Security();
+                if (security.DecryptTrypleDES(token) == Config.token)
                 {
                     if (Config.lifeToken >= DateTime.Now)
                     {
@@ -35,13 +36,15 @@ namespace ApiDistribuidora.Controllers
                         Log.Save("Api - Token ok");
                     }
                 }
-
+                else
+                    result.errorMessage = "Erro ao tentar verificar o token";
             }
             catch (Exception ex)
             {
-                return new JsonResult(ex.Message);
+                result.errorMessage = "Erro ao tentar executar o Accesstest";
             }
-            return new JsonResult(result);
+
+            return result;
         }
 
         [HttpGet]
@@ -62,8 +65,9 @@ namespace ApiDistribuidora.Controllers
                     result.success = false;
                     return new JsonResult(result.success);
                     Log.Save("Api - Falha ao gerar Token");
-                }
-                result.data = Config.token;
+                }   
+                Security security = new Security();
+                result.data = security.EncryptTripleDES(Config.token);
                 return new JsonResult(result);
 
             }

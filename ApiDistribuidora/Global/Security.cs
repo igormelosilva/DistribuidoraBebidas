@@ -5,7 +5,7 @@ namespace ApiDistribuidora.Global
 {
     public class Security
     {
-        const string encryptKey = @"chave de segurança";
+        const string encryptKey = @"kjerhifgjherpighirjwhgigwh8927r-9#$%¨SDF$$%";
 
         public string EncryptMD5(string text)
         {
@@ -51,6 +51,7 @@ namespace ApiDistribuidora.Global
 
         public string DecryptTrypleDES(string text)
         {
+            text = text.Replace(" ", "+");
             string result = null;
 
             byte[] textBytes = Convert.FromBase64String(text);

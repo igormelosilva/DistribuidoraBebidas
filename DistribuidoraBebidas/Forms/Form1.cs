@@ -29,10 +29,12 @@ namespace DistribuidoraBebidas
                 }
                 else
                 {
+                    Security security = new Security();
+
                     Log.Save("Login efetuado com sucesso");
                     Config.user = user;
                     Config.pass = pass;
-                    Config.token = result.data;  
+                    Config.token = security.DecryptTrypleDES(result.data);  
                     Form2 form2 = new Form2();                   
                     form2.ShowDialog();
                     this.Hide();
