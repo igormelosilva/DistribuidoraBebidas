@@ -13,7 +13,7 @@ namespace DistribuidoraBebidas.Global
         public static string tokenSecret;
         public static string user;
         public static string pass;
-        public static string apiBaseUrl = "http://localhost:5198/api/DistribuidoraBebidas/";        
+        public static string apiBaseUrl = "http://localhost:5198/api/";        
         //variaveis lidas do appsettings.json
         public static string fileName = string.Empty;
         public static string folderName = string.Empty;

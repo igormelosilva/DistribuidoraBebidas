@@ -84,5 +84,19 @@ namespace DistribuidoraBebidas.Forms
 
 
         }
+
+        private void btnGetAll_Click(object sender, EventArgs e)
+        {
+            ApiDrink apiDrink = new ApiDrink();
+            try
+            {
+                apiDrink.GetAll();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

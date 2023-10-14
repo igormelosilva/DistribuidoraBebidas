@@ -36,6 +36,7 @@
             label3 = new Label();
             btnEnviarAccess = new Button();
             lblAcessTest = new Label();
+            btnGetAll = new Button();
             SuspendLayout();
             // 
             // lblToken
@@ -113,11 +114,22 @@
             lblAcessTest.TabIndex = 8;
             lblAcessTest.Text = "Enviar Solicitação";
             // 
+            // btnGetAll
+            // 
+            btnGetAll.Location = new Point(357, 179);
+            btnGetAll.Name = "btnGetAll";
+            btnGetAll.Size = new Size(75, 23);
+            btnGetAll.TabIndex = 9;
+            btnGetAll.Text = "btnGetAll";
+            btnGetAll.UseVisualStyleBackColor = true;
+            btnGetAll.Click += btnGetAll_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnGetAll);
             Controls.Add(lblAcessTest);
             Controls.Add(btnEnviarAccess);
             Controls.Add(label3);
@@ -142,5 +154,6 @@
         private Label label3;
         private Button btnEnviarAccess;
         private Label lblAcessTest;
+        private Button btnGetAll;
     }
 }
